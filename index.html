@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>L.point_Clothes_Reference</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <link rel="stylesheet" href="themes/Lpoint_theme.min.css" />
+  	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+  	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        a {
+          text-decoration: none;
+          text-align: center;
+        }
+        .container{
+            /*background-color: powderblue;*/
+            display:flex;
+            flex-direction: column;
+        }
+        .item{
+            /*background-color: gray;*/
+            color:white;
+            border:1px solid white;
+            flex-grow: 1;
+        }
+    </style>
+
+</head>
+<body>
+
+<div data-role="page">
+
+    <div data-role="header" data-position = "fixed">
+        <h1>L.point</h1>
+    </div>
+
+    <div data-role="content">
+
+        <div id = 'your_choice'>
+
+            <ul data-role='listview'>
+                <li role = 'heading' data-role = 'list-divider'>아우터</li>
+                <li>
+                <fieldset data-role="controlgroup" data-type = 'horizontal' data-mini = 'true'>
+                        <input name="outer" id="coat" type="radio" checked = "checked" value="choice-1">
+                        <label for="coat">코트</label>
+                        <input name="outer" id="jacket" type="radio" value="choice-2">
+                        <label for="jacket">자켓</label>
+                        <input name="outer" id="padding" type="radio" value="choice-3">
+                        <label for="padding">패딩</label>
+                        <input name="outer" id="none_outer" type="radio" value="choice-4">
+                        <label for="none_outer">없음</label>
+                </fieldset>
+                </li>
+
+                <li role = 'heading' data-role = 'list-divider'>상의</li>
+                <li>
+                <fieldset data-role="controlgroup" data-type = 'horizontal' data-mini = 'true'>
+                        <input name="top" id="man_to_man" type="radio" checked = "checked" value="choice-1">
+                        <label for="man_to_man">맨투맨</label>
+                        <input name="top" id="sweater" type="radio" value="choice-2">
+                        <label for="sweater">스웨터</label>
+                        <input name="top" id="cardigan" type="radio" value="choice-3">
+                        <label for="cardigan">가디건</label>
+                        <input name="top" id="none_top" type="radio" value="choice-4">
+                        <label for="none_top">없음</label>
+                </fieldset>
+                </li>
+
+                <li role = 'heading' data-role = 'list-divider'>하의</li>
+                <li>
+                <fieldset data-role="controlgroup" data-type = 'horizontal' data-mini = 'true'>
+                        <input name="bottom" id="jeans" type="radio" checked = "checked" value="choice-1">
+                        <label for="jeans">청바지</label>
+                        <input name="bottom" id="dress_slacks" type="radio" value="choice-2">
+                        <label for="dress_slacks">정장바지</label>
+                        <input name="bottom" id="cotton_trousers" type="radio" value="choice-3">
+                        <label for="cotton_trousers">면바지</label>
+                        <input name="bottom" id="none_bottom" type="radio" value="choice-4">
+                        <label for="none_bottom">없음</label>
+                </fieldset>
+                </li>
+
+                <li role = 'heading' data-role = 'list-divider'>
+                <fieldset data-role="controlgroup" data-type = 'horizontal' data-mini = 'true'>
+                        <input name="select_done" id="select_done" type="radio" value="choice-1">
+                        <label for="select_done">선택완료</label>
+                </fieldset>
+                </li>
+
+              </ul>
+              <br>
+              <br>
+
+        </div>
+
+        <div id = "coordi">
+              coordi images here
+        </div>
+
+
+        <div id = "PUI_chart">
+            <div class="chart-container" style="position: relative">
+                  <canvas id="PUI_Canvas" width="200" height="100" aria-label="PUI" role="img"></canvas>
+                  <canvas id="SI_Canvas" width="200" height="100" aria-label="SI" role="img"></canvas>
+            </div>
+        </div>
+
+
+        <div data-role = "collapsible">
+            <h3>Link_to_lotte</h3>
+
+            <ul id = "link_to_lotte" data-role = 'listview'>
+
+            <li id = 'list_outer_header' role = 'heading' data-role = 'list-divider' data-theme = 'a'>Outer</li>
+            <li id = 'list_outer'>
+            <div id = "link_outer">
+                <fieldset class = "ui-grid-b">
+                    <div class = "ui-block-a">
+                        <div id = "outer_1_item" class = "container">
+                            <a class = "item" target = '_blank' href = "https://www.naver.com">hi there</a>
+                            <img class = "item" src = "ai.png" height = "100px">
+                            <div class = "item">
+                                <canvas id = "PUI_outer_1_Canvas" width = "20" height = "7" aria-label="PUI_outer_1" role = "img"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "ui-block-b">
+                        <div id = "outer_2_item" class = "container">
+                            <a class = "item" target = '_blank' href = "https://www.naver.com">hi there</a>
+                            <img class = "item" src = "ai.png" height = "100px">
+                            <div class = "item">
+                                <canvas id = "PUI_outer_2_Canvas" width = "20" height = "7" aria-label="PUI_outer_2" role = "img"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "ui-block-c">
+                        <div id = "outer_3_item" class = "container">
+                            <a class = "item" target = '_blank' href = "https://www.naver.com">hi there</a>
+                            <img class = "item" src = "ai.png" height = "100px">
+                            <div class = "item">
+                                <canvas id = "PUI_outer_3_Canvas" width = "20" height = "7" aria-label="PUI_outer_3" role = "img"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            </li>
+
+
+
+            <li id = 'list_top_header' role = 'heading' data-role = 'list-divider' data-theme = 'a'>Top</li>
+            <li id = 'list_top'>
+            <div id = "link_top">
+                <fieldset class = "ui-grid-b">
+                    <div class = "ui-block-a">
+                        <div id = "top_1_item" class = "container">
+                            <a class = "item" target = '_blank' href = "https://www.naver.com">hi there</a>
+                            <img class = "item" src = "ai.png" height = "100px">
+                            <div class = "item">
+                                <canvas id = "PUI_top_1_Canvas" width = "20" height = "7" aria-label="PUI_top_1" role = "img"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "ui-block-b">
+                        <div id = "top_2_item" class = "container">
+                            <a class = "item" target = '_blank' href = "https://www.naver.com">hi there</a>
+                            <img class = "item" src = "ai.png" height = "100px">
+                            <div class = "item">
+                                <canvas id = "PUI_top_2_Canvas" width = "20" height = "7" aria-label="PUI_top_2" role = "img"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "ui-block-c">
+                        <div id = "top_3_item" class = "container">
+                            <a class = "item" target = '_blank' href = "https://www.naver.com">hi there</a>
+                            <img class = "item" src = "ai.png" height = "100px">
+                            <div class = "item">
+                                <canvas id = "PUI_top_3_Canvas" width = "20" height = "7" aria-label="PUI_top_3" role = "img"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            </li>
+
+
+            <li id = 'list_bottom_header' role = 'heading' data-role = 'list-divider' data-theme = 'a'>Bottom</li>
+            <li id = 'list_bottom'>
+            <div id = "link_bottom">
+                <fieldset class = "ui-grid-b">
+                    <div class = "ui-block-a">
+                        <div id = "bottom_1_item" class = "container">
+                            <a class = "item" target = '_blank' href = "https://www.naver.com">hi there</a>
+                            <img class = "item" src = "ai.png" height = "100px">
+                            <div class = "item">
+                                <canvas id = "PUI_bottom_1_Canvas" width = "20" height = "7" aria-label="PUI_bottom_1" role = "img"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "ui-block-b">
+                        <div id = "bottom_2_item" class = "container">
+                            <a class = "item" target = '_blank' href = "https://www.naver.com">hi there</a>
+                            <img class = "item" src = "ai.png" height = "100px">
+                            <div class = "item">
+                                <canvas id = "PUI_bottom_2_Canvas" width = "20" height = "7" aria-label="PUI_bottom_2" role = "img"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "ui-block-c">
+                        <div id = "bottom_3_item" class = "container">
+                            <a class = "item" target = '_blank' href = "https://www.naver.com">hi there</a>
+                            <img class = "item" src = "ai.png" height = "100px">
+                            <div class = "item">
+                                <canvas id = "PUI_bottom_3_Canvas" width = "20" height = "7" aria-label="PUI_bottom_3" role = "img"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            </li>
+
+            </ul>
+        </div>
+
+
+    </div><!-- contatiner의 끝 -->
+
+    <div data-role="footer" data-position = "fixed">
+        <h4>L.point</h4>
+    </div>
+
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script>
+    <script> Chart.plugins.unregister(ChartDataLabels); </script>
+
+      <!-- 기타함수 -->
+    <script>
+        function fillArray(value, len) {
+          var arr = [];
+          for (var i = 0; i < len; i++) {
+            arr.push(value);
+          }
+          return arr;
+        }
+    </script>
+     <!--무엇을 요구히는지 알아내는 파트 -->
+    <script>
+        var clothes_type = ['outer', 'top', 'bottom']
+        var number_of_clothes_type = [1,2,3,4]
+        var clothes = {}
+
+        $('li [name="select_done"]#select_done').bind('click', function(event){
+          $('li [name="select_done"]#select_done').prop("checked", false).checkboxradio("refresh");
+        })
+
+        $('li [name="select_done"]#select_done').bind('click', function(event){
+          for(var j = 0; j < clothes_type.length; j++){
+            for(var i = 0; i < number_of_clothes_type.length; i++){
+              if ($('input[name=' + clothes_type[j] + '][value=choice-' + number_of_clothes_type[i] + ']').prop('checked')){
+                clothes[clothes_type[j]] = $('input[name=' + clothes_type[j] + '][value=choice-' + number_of_clothes_type[i] + ']').attr('id')
+              }
+            }
+          }
+        })
+    </script>
+
+    <!--차트를 그리기 전에 데이터셋 준비 -->
+    <script>
+        /*아우터*/
+        var coat = { 'name': '코트', 'data': [12, 11, 10, 9], 'SI_data': 23,
+                      'color_back': 'rgba(255, 99, 132, 0.2)', 'color_border': 'rgba(255,99,132,1)'};
+        var jacket = { 'name': '자켓', 'data': [7, 8, 5, 9], 'SI_data': 17,
+                      'color_back': 'rgba(255, 99, 132, 0.2)', 'color_border': 'rgba(255,99,132,1)'};
+        var padding = { 'name': '패딩', 'data': [15, 8, 7, 9], 'SI_data': 43,
+                      'color_back': 'rgba(255, 99, 132, 0.2)', 'color_border': 'rgba(255,99,132,1)'};
+
+        var outer_ = {'coat': coat, 'jacket': jacket, 'padding': padding}
+
+        /*상의*/
+        var man_to_man = { 'name': '맨투맨', 'data': [3, 7, 5, 6], 'SI_data': 40,
+                            'color_back': 'rgba(54, 162, 235, 0.2)', 'color_border': 'rgba(54, 162, 235, 1)'};
+        var sweater  = { 'name': '스웨터', 'data': [2, 5, 7, 9], 'SI_data': 38,
+                            'color_back': 'rgba(54, 162, 235, 0.2)', 'color_border': 'rgba(54, 162, 235, 1)'};
+        var cardigan  = { 'name': '가디건', 'data': [10, 8, 10, 9], 'SI_data': 20,
+                            'color_back': 'rgba(54, 162, 235, 0.2)', 'color_border': 'rgba(54, 162, 235, 1)'};
+
+        var top_ = {'man_to_man': man_to_man, 'sweater': sweater, 'cardigan': cardigan}
+
+        /*하의*/
+        var jeans  = { 'name': '청바지', 'data': [5, 7, 6, 3], 'SI_data': 36,
+                            'color_back': 'rgba(255, 206, 86, 0.2)', 'color_border': 'rgba(255, 206, 86, 1)'};
+        var dress_slacks  = { 'name': '정장바지', 'data': [13, 11, 10, 3], 'SI_data': 15,
+                            'color_back': 'rgba(255, 206, 86, 0.2)', 'color_border': 'rgba(255, 206, 86, 1)'};
+        var cotton_trousers  = { 'name': '면바지', 'data': [10, 13, 9, 5], 'SI_data': 23,
+                            'color_back': 'rgba(255, 206, 86, 0.2)', 'color_border': 'rgba(255, 206, 86, 1)'};
+
+        var bottom_ = {'jeans': jeans, 'dress_slacks': dress_slacks, 'cotton_trousers': cotton_trousers}
+
+        /*전체 모음*/
+        var clothes_set = {'outer': outer_, 'top': top_, 'bottom': bottom_}
+
+    </script>
+    <!--세분류 차트를 위한 데이터셋-->
+
+    <script>
+        var outer_data_set = {'coat': {'trench' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [7], 'name' : '트렌치 코트'},
+                                        'single' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [6], 'name' : '싱글 코트'},
+                                        'double' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [5], 'name' : '더블 코트'}
+                                        },
+                               'jacket': {'linen' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '린넨 자켓'} ,
+                                          'denim' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [6], 'name' : '데님 자켓'} ,
+                                          'trucker' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [3], 'name' : '트러커 자켓'}
+                                        },
+                               'padding': {'long' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [2], 'name' : '롱 패딩'},
+                                           'short': {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '숏 패딩'} ,
+                                           'goose' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [5], 'name' : '구스 패딩'}
+                                         }
+                                       }
+
+        var top_data_set = {'man_to_man': {'manA' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [7], 'name' : '맨A'},
+                                           'manB' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '맨B'},
+                                           'manC' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [3], 'name' : '맨C'}
+                                        },
+                            'sweater': {'sweA' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [2], 'name' : '스A'} ,
+                                        'sweB' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '스B'} ,
+                                        'sweC' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [8], 'name' : '스C'}
+                                        },
+                            'cardigan': {'carA' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [9], 'name' : '가A'},
+                                         'carB': {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '가B'} ,
+                                         'carC' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [1], 'name' : '가C'}
+                                         }
+                                       }
+
+        var bottom_data_set = {'jeans': {'jeansA' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [3], 'name' : '청A'},
+                                           'jeansB' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '청B'},
+                                           'jeansC' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [8], 'name' : '청C'}
+                                        },
+                            'dress_slacks': {'dress_slacksA' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '슬랙스A'} ,
+                                             'dress_slacksB' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [9], 'name' : '슬랙스B'} ,
+                                             'dress_slacksC' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [3], 'name' : '슬랙스C'}
+                                        },
+                            'cotton_trousers': {'cotton_trousersA' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [2], 'name' : '면바지A'},
+                                                'cotton_trousersB' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [6], 'name' : '면바지B'} ,
+                                                'cotton_trousersC' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [7], 'name' : '면바지C'}
+                                         }
+                                       }
+
+        var whole_data_set = { 'outer_data_set' : outer_data_set,
+                               'top_data_set' : top_data_set,
+                               'bottom_data_set' : bottom_data_set}
+
+    </script>
+    <!-- 링크파트 옵션 -->
+
+    <script>
+        options_pui_ctx = {
+          // Elements options apply to all of the options unless overridden in a dataset
+          // In this case, we are setting the border of each horizontal bar to be 2px wide
+          elements: {
+            rectangle: {
+              borderWidth: 0,
+            }
+          },
+          responsive: true,
+          legend: {
+            position: 'right',
+            display: false
+          },
+          scales: {
+              xAxes: [{
+                  ticks: {
+                      display : false,
+                      suggestedMax : 10,
+                      beginAtZero : true
+                  }
+              }]/*,
+              yAxes: [ {ticks : {display : false}} ]*/
+          },
+          plugins: {
+            datalabels: {
+                backgroundColor: function(context) {
+                  return context.dataset.backgroundColor;
+                },
+                borderColor: 'white',
+                borderRadius: 25,
+                borderWidth: 1,
+                color: 'black',
+                display: function(context) {
+                  var dataset = context.dataset;
+                  var count = dataset.data.length;
+                  var value = dataset.data[context.dataIndex];
+                  return value > count * 1.5;
+                },
+                font: {
+                  weight: 'bold',
+                  size: 10
+                },
+                formatter: function(value, context) {
+                      return Math.round(value) + 'PUI'
+                }
+              }
+
+            }
+        }
+    </script>
+
+    <!--차트를 그리는 파트 -->
+    <script>
+        /*초기 필요값*/
+        var ctx = document.getElementById("PUI_Canvas");
+        var clothes = {outer: "coat", top: "man_to_man", bottom: "jeans"}
+
+        /*update 하는 파트 */
+        /*함수*/
+        function PUI_dataset_update(){
+
+          var PUI_dataset = []
+          for (var k = 0; k < 3; k++){
+
+            var clothes_selected = clothes[clothes_type[k]]
+
+            if (clothes_selected.substr(0,4) === "none") {
+              continue;
+            }
+
+            var PUI_dataset_temp = {label : 'PUI_' +  clothes_set[clothes_type[k]][clothes_selected]['name'],
+                                    data :  clothes_set[clothes_type[k]][clothes_selected]['data'],
+                                    backgroundColor : fillArray(clothes_set[clothes_type[k]][clothes_selected]['color_back'], 4),
+                                    borderColor : fillArray(clothes_set[clothes_type[k]][clothes_selected]['color_border'], 4),
+                                    borderWidth: 1}
+
+            PUI_dataset.push(PUI_dataset_temp)
+          }
+
+          return PUI_dataset ;
+        }
+        /*이벤트 추가*/
+        $('li [name="select_done"]#select_done').bind('click', function(event){
+
+          myChart.data.datasets = PUI_dataset_update()
+
+          myChart.update()
+        })
+
+    </script>
+
+    <!-- 유사주의보 시작 -->
+    <script>
+        var si_ctx = document.getElementById("SI_Canvas");
+
+        function SI_dataset_update(){
+
+          var SI_dataset = []
+          for (var k = 0; k < 3; k++){
+
+            var clothes_selected = clothes[clothes_type[k]]
+
+            if (clothes_selected.substr(0,4) === "none") {
+              continue;
+            }
+
+            var SI_dataset_temp = {label : clothes_set[clothes_type[k]][clothes_selected]['name'],
+                                    data :  [clothes_set[clothes_type[k]][clothes_selected]['SI_data'],
+                                              100 - clothes_set[clothes_type[k]][clothes_selected]['SI_data']],
+                                    backgroundColor : [clothes_set[clothes_type[k]][clothes_selected]['color_back'],
+                                                        'rgba(0, 0, 0, 0.3)'],
+                                    borderColor : 'rgba(0, 0, 0, 0.7)',
+                                    borderWidth: 1,
+                                    datalabels: {
+                          						anchor: 'center',
+                          						backgroundColor: null,
+                          						borderWidth: 0
+                          					}
+                                  }
+
+            SI_dataset.push(SI_dataset_temp)
+          }
+
+          return SI_dataset ;
+        }
+        /* 이벤트 추가 */
+        $('li [name="select_done"]#select_done').bind('click', function(event){
+
+          myChart_si.data.datasets = SI_dataset_update()
+
+          myChart_si.update()
+        })
+
+
+    </script>
+
+
+
+
+
+    <!-- $('#link_to_lotte #list_outer').append(outer_html) -->
+    <!-- 링크 파트 시작 -->
+    <script>
+        var outer_html = document.getElementById('link_outer').innerHTML
+        var top_html = document.getElementById('link_top').innerHTML
+        var bottom_html = document.getElementById('link_bottom').innerHTML
+
+        var pui_outer_1_ctx = document.getElementById('PUI_outer_1_Canvas')
+        var pui_outer_2_ctx = document.getElementById('PUI_outer_2_Canvas')
+        var pui_outer_3_ctx = document.getElementById('PUI_outer_3_Canvas')
+        var pui_outer_ctx_set = {'ctx_1': pui_outer_1_ctx,
+                                 'ctx_2': pui_outer_2_ctx,
+                                 'ctx_3': pui_outer_3_ctx}
+
+        var pui_top_1_ctx = document.getElementById('PUI_top_1_Canvas')
+        var pui_top_2_ctx = document.getElementById('PUI_top_2_Canvas')
+        var pui_top_3_ctx = document.getElementById('PUI_top_3_Canvas')
+        var pui_top_ctx_set = {'ctx_1': pui_top_1_ctx,
+                               'ctx_2': pui_top_2_ctx,
+                               'ctx_3': pui_top_3_ctx}
+
+        var pui_bottom_1_ctx = document.getElementById('PUI_bottom_1_Canvas')
+        var pui_bottom_2_ctx = document.getElementById('PUI_bottom_2_Canvas')
+        var pui_bottom_3_ctx = document.getElementById('PUI_bottom_3_Canvas')
+        var pui_bottom_ctx_set = {'ctx_1': pui_bottom_1_ctx,
+                                  'ctx_2': pui_bottom_2_ctx,
+                                  'ctx_3': pui_bottom_3_ctx}
+
+
+        var whole_pui_ctx_set = {'pui_outer_ctx_set' : pui_outer_ctx_set,
+                                 'pui_top_ctx_set' : pui_top_ctx_set,
+                                 'pui_bottom_ctx_set' : pui_bottom_ctx_set}
+
+
+
+        /*outerx 전부!!*/
+
+        var name_of_type = {'outer' : '아우터', 'top' : '상의', 'bottom' : '하의'}
+
+        $('li [name="select_done"]#select_done').bind('click', function(event){
+
+            /* 초기 순서 맞춰주기 위한 코드 */
+            for (var k = 0; k < clothes_type.length; k++){
+
+                var clothe_type_temp = clothes_type[k]
+
+                $('#list_'+ clothe_type_temp +'_header').text(name_of_type[clothe_type_temp])
+                $('#list_'+ clothe_type_temp +'_header').css('backgroundColor', '#518DDD')
+                $('#link_to_lotte').append($('#list_'+ clothe_type_temp +'_header'))
+                $('#link_to_lotte').append($('#list_'+ clothe_type_temp ))
+
+            }
+
+            var clothes_type_temp = []
+            var clothes_type_none_temp = []
+
+            for (var k = 0; k < 3; k++){
+                var clothes_selected = clothes[clothes_type[k]]
+
+                if (clothes_selected.substr(0,4) === "none") {
+                   clothes_type_none_temp.push(clothes_type[k]);
+                   continue;
+                }
+
+                clothes_type_temp.push(clothes_type[k])
+            }
+
+            for (var k = 0; k < clothes_type_none_temp.length; k++){
+
+                var clothe_not_selected = clothes_type_none_temp[k]
+
+                var what_we_will_say = name_of_type[clothe_not_selected] + '로 이런건 어떠세요?'
+
+                $('#list_'+ clothe_not_selected +'_header').text(what_we_will_say)
+                $('#list_'+ clothe_not_selected +'_header').css('backgroundColor', '#93e1d4')
+                $('#link_to_lotte').append($('#list_'+ clothe_not_selected +'_header'))
+                $('#link_to_lotte').append($('#list_'+ clothe_not_selected ))
+
+            }
+
+            for (var k = 0; k < clothes_type_temp.length; k++){
+
+                /*clothes_type = outer,top,bottom*/
+                var clothe_type_selected = clothes_type_temp[k]
+                var clothe_selected = clothes[clothe_type_selected]
+                var clothe_selected_dataset = whole_data_set[clothe_type_selected + '_data_set'][clothe_selected]
+
+                var i = 0
+                for (key in clothe_selected_dataset){
+                  var i = i + 1
+
+                  var img_link_temp = clothe_selected_dataset[key].image
+                  $('#' + clothe_type_selected + '_' + i + '_item img').attr('src', img_link_temp)
+
+                  $('#' + clothe_type_selected + '_' + i + '_item a').text(clothe_selected_dataset[key].name)
+                  $('#' + clothe_type_selected + '_' + i + '_item a').attr('href', clothe_selected_dataset[key].link)
+
+                  var ctx_dataset_temp = clothe_selected_dataset[key].data
+
+                  /* canvas */
+                  window['myChart_pui_' + clothe_type_selected +'_' + i ].data.datasets =  [{ data : ctx_dataset_temp , backgroundColor : 'rgba(31,54,84,0.3)'}]
+
+                  window['myChart_pui_' + clothe_type_selected +'_' + i ].update()
+                  }
+            }
+
+        })
+
+    </script>
+
+    <!--윈도우 온로드-->
+    <script>
+
+        window.onload = function() {
+
+            SI_dataset = SI_dataset_update()
+
+            window.myChart_si = new Chart(si_ctx, {
+              plugins: [ChartDataLabels],
+              type: 'doughnut',
+              data: {
+                labels: ["같은 옷", "다른 옷"],
+                datasets: SI_dataset
+              },
+              options: {
+                  title: {
+                    display: true,
+                    text: '유사주의보 -100명중 당신과 같은 옷을 입고 있는 사람은 몇명?-' /*지금 밖에는?*/
+                  },
+                  circumference: Math.PI,
+                  rotation: 1.0 * Math.PI,
+
+                  plugins: {
+                    datalabels: {
+                        backgroundColor: function(context) {
+                          return context.dataset.backgroundColor;
+                        },
+                        borderColor: 'white',
+                        borderRadius: 25,
+                        borderWidth: 2,
+                        color: 'black',
+                        display: function(context) {
+                          var dataset = context.dataset;
+                          var count = dataset.data.length;
+                          var value = dataset.data[context.dataIndex];
+                          return value > count * 1.5;
+                        },
+                        font: {
+                          weight: 'bold'
+                        },
+                        formatter: function(value, context) {
+
+                            if (context.dataIndex === 0){
+                              return Math.round(value) + '명';
+                            } else if (context.dataIndex === 1) {
+                              return context.dataset.label
+                            }
+
+                        }
+                      }
+                    }
+                  }
+                })
+
+            window.myChart_si.update()
+
+            PUI_dataset = PUI_dataset_update()
+
+            window.myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                  labels: ["2-wks-ago", "1-wks-ago",
+                            "this-week", "next-week"],
+                  datasets: PUI_dataset
+                },
+                options: {
+
+                    title: {
+                      display: true,
+                      text: 'L-Trend Now(트렌드 현황)'
+                    },
+
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            for (var k = 0; k < clothes_type.length; k++){
+
+                /*clothes_type = outer,top,bottom*/
+                var clothe_type_selected = clothes_type[k]
+                var clothe_selected = clothes[clothe_type_selected]
+                var clothe_selected_dataset = whole_data_set[clothe_type_selected + '_data_set'][clothe_selected]
+
+                var i = 0
+                for (key in clothe_selected_dataset){
+                  var i = i + 1
+
+                  var img_link_temp = clothe_selected_dataset[key].image
+                  $('#' + clothe_type_selected + '_' + i + '_item img').attr('src', img_link_temp)
+
+                  $('#' + clothe_type_selected + '_' + i + '_item a').text(clothe_selected_dataset[key].name)
+                  $('#' + clothe_type_selected + '_' + i + '_item a').attr('href', clothe_selected_dataset[key].link)
+
+                  var ctx_dataset_temp = clothe_selected_dataset[key].data
+
+                  /* canvas */
+                  window['myChart_pui_' + clothe_type_selected +'_' + i ] = new Chart(whole_pui_ctx_set['pui_' + clothe_type_selected + '_ctx_set']['ctx_' + i], {
+                        plugins: [ChartDataLabels],
+                        type: 'horizontalBar',
+                        data: { datasets: [{
+                                  data : ctx_dataset_temp,
+                                  backgroundColor : 'rgba(31,54,84,0.3)'
+                                }]},
+                        options: options_pui_ctx
+                      });
+                  }
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>
