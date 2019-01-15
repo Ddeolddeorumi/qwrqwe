@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
     <link rel="stylesheet" href="themes/Lpoint_theme.min.css" />
   	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-  	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-  	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  	<link rel="stylesheet" href="./jquery.mobile.structure-1.4.5.min.css" />
+  	<script src="./jquery-1.11.1.min.js"></script>
+  	<script src="./jquery.mobile-1.4.5.min.js"></script>
     <style>
         a {
           text-decoration: none;
@@ -57,12 +57,12 @@
                 <li role = 'heading' data-role = 'list-divider'>상의</li>
                 <li>
                 <fieldset data-role="controlgroup" data-type = 'horizontal' data-mini = 'true'>
-                        <input name="top" id="man_to_man" type="radio" checked = "checked" value="choice-1">
-                        <label for="man_to_man">맨투맨</label>
+                        <input name="top" id="shirts" type="radio" checked = "checked" value="choice-1">
+                        <label for="shirts">남방셔츠</label>
                         <input name="top" id="sweater" type="radio" value="choice-2">
                         <label for="sweater">스웨터</label>
-                        <input name="top" id="cardigan" type="radio" value="choice-3">
-                        <label for="cardigan">가디건</label>
+                        <input name="top" id="t_shirts" type="radio" value="choice-3">
+                        <label for="t_shirts">티셔츠</label>
                         <input name="top" id="none_top" type="radio" value="choice-4">
                         <label for="none_top">없음</label>
                 </fieldset>
@@ -71,12 +71,12 @@
                 <li role = 'heading' data-role = 'list-divider'>하의</li>
                 <li>
                 <fieldset data-role="controlgroup" data-type = 'horizontal' data-mini = 'true'>
-                        <input name="bottom" id="jeans" type="radio" checked = "checked" value="choice-1">
+                        <input name="bottom" id="casual_pants" type="radio" checked = "checked" value="choice-1">
+                        <label for="casual_pants">캐쥬얼 바지</label>
+                        <input name="bottom" id="skirt" type="radio" value="choice-2">
+                        <label for="skirt">치마</label>
+                        <input name="bottom" id="jeans" type="radio" value="choice-3">
                         <label for="jeans">청바지</label>
-                        <input name="bottom" id="dress_slacks" type="radio" value="choice-2">
-                        <label for="dress_slacks">정장바지</label>
-                        <input name="bottom" id="cotton_trousers" type="radio" value="choice-3">
-                        <label for="cotton_trousers">면바지</label>
                         <input name="bottom" id="none_bottom" type="radio" value="choice-4">
                         <label for="none_bottom">없음</label>
                 </fieldset>
@@ -232,8 +232,8 @@
     </div>
 
 </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script>
+    <script src="./Chart.js"></script>
+    <script src="./chartjs-plugin-datalabels@0.5.0"></script>
     <script> Chart.plugins.unregister(ChartDataLabels); </script>
 
       <!-- 기타함수 -->
@@ -280,24 +280,24 @@
         var outer_ = {'coat': coat, 'jacket': jacket, 'padding': padding}
 
         /*상의*/
-        var man_to_man = { 'name': '맨투맨', 'data': [3, 7, 5, 6], 'SI_data': 40,
+        var shirts = { 'name': '남방셔츠', 'data': [3, 7, 5, 6], 'SI_data': 40,
                             'color_back': 'rgba(54, 162, 235, 0.2)', 'color_border': 'rgba(54, 162, 235, 1)'};
         var sweater  = { 'name': '스웨터', 'data': [2, 5, 7, 9], 'SI_data': 38,
                             'color_back': 'rgba(54, 162, 235, 0.2)', 'color_border': 'rgba(54, 162, 235, 1)'};
-        var cardigan  = { 'name': '가디건', 'data': [10, 8, 10, 9], 'SI_data': 20,
+        var t_shirts  = { 'name': '티셔츠', 'data': [10, 8, 10, 9], 'SI_data': 20,
                             'color_back': 'rgba(54, 162, 235, 0.2)', 'color_border': 'rgba(54, 162, 235, 1)'};
 
-        var top_ = {'man_to_man': man_to_man, 'sweater': sweater, 'cardigan': cardigan}
+        var top_ = {'shirts': shirts, 'sweater': sweater, 't_shirts': t_shirts}
 
         /*하의*/
-        var jeans  = { 'name': '청바지', 'data': [5, 7, 6, 3], 'SI_data': 36,
+        var casual_pants  = { 'name': '캐쥬얼 바지', 'data': [5, 7, 6, 3], 'SI_data': 36,
                             'color_back': 'rgba(255, 206, 86, 0.2)', 'color_border': 'rgba(255, 206, 86, 1)'};
-        var dress_slacks  = { 'name': '정장바지', 'data': [13, 11, 10, 3], 'SI_data': 15,
+        var skirt  = { 'name': '치마', 'data': [13, 11, 10, 3], 'SI_data': 15,
                             'color_back': 'rgba(255, 206, 86, 0.2)', 'color_border': 'rgba(255, 206, 86, 1)'};
-        var cotton_trousers  = { 'name': '면바지', 'data': [10, 13, 9, 5], 'SI_data': 23,
+        var jeans  = { 'name': '청바지', 'data': [10, 13, 9, 5], 'SI_data': 23,
                             'color_back': 'rgba(255, 206, 86, 0.2)', 'color_border': 'rgba(255, 206, 86, 1)'};
 
-        var bottom_ = {'jeans': jeans, 'dress_slacks': dress_slacks, 'cotton_trousers': cotton_trousers}
+        var bottom_ = {'casual_pants': casual_pants, 'skirt': skirt, 'jeans': jeans}
 
         /*전체 모음*/
         var clothes_set = {'outer': outer_, 'top': top_, 'bottom': bottom_}
@@ -306,45 +306,72 @@
     <!--세분류 차트를 위한 데이터셋-->
 
     <script>
-        var outer_data_set = {'coat': {'trench' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [7], 'name' : '트렌치 코트'},
-                                        'single' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [6], 'name' : '싱글 코트'},
-                                        'double' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [5], 'name' : '더블 코트'}
+        var outer_data_set = {'coat': {'trench' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=634385492&infw_disp_no_sct_cd=50&infw_disp_no=5416641&tracking=Search_Result&allViewYn=N',
+                                                    'image': './img_set/trench_coat.jpg' ,'data' : [7], 'name' : '트렌치 코트'},
+                                        'hood' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=635727564&infw_disp_no_sct_cd=50&infw_disp_no=5416651&tracking=Search_Result&allViewYn=N',
+                                                  'image': './img_set/hood_coat.jpg' ,'data' : [6], 'name' : '후드 코트'},
+                                        'double' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=592636558&infw_disp_no_sct_cd=50&infw_disp_no=5414683&tracking=Search_Result&allViewYn=N',
+                                                    'image': './img_set/double_coat.jpg' ,'data' : [5], 'name' : '더블 코트'}
                                         },
-                               'jacket': {'linen' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '린넨 자켓'} ,
-                                          'denim' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [6], 'name' : '데님 자켓'} ,
-                                          'trucker' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [3], 'name' : '트러커 자켓'}
+                               'jacket': {'linen' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=525670002&infw_disp_no_sct_cd=50&infw_disp_no=5416573&tracking=Search_Result&allViewYn=N',
+                                                      'image': './img_set/linen_jacket.jpg' ,'data' : [4], 'name' : '린넨 자켓'} ,
+                                          'denim' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=565548701&infw_disp_no_sct_cd=50&infw_disp_no=5416623&tracking=Search_Result&allViewYn=N',
+                                                      'image': './img_set/denim_jacket.jpg' ,'data' : [6], 'name' : '데님 자켓'} ,
+                                          'cotton' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=634159472&infw_disp_no_sct_cd=50&infw_disp_no=5416612&tracking=Search_Result&allViewYn=N#layerpopLargeView',
+                                                      'image': './img_set/cotton_jacket.jpg' ,'data' : [3], 'name' : '코튼 자켓'}
                                         },
-                               'padding': {'long' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [2], 'name' : '롱 패딩'},
-                                           'short': {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '숏 패딩'} ,
-                                           'goose' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [5], 'name' : '구스 패딩'}
+                               'padding': {'long' : {'link' : 'http://www.lfmall.co.kr/p2/search/result?searchWord=%EC%97%AC%EC%84%B1%20%EB%A1%B1%ED%8C%A8%EB%94%A9&etag1=021_A002_E023&etag2=0&etag3=0&etag4=%EC%97%AC%EC%84%B1%2C%EC%88%8F%ED%8C%A8%EB%94%A9',
+                                                     'image': './img_set/long_padding.jpg' ,'data' : [2], 'name' : '롱 패딩'},
+                                           'short': {'link' : 'http://www.lfmall.co.kr/p2/search/result?searchWord=%EC%97%AC%EC%84%B1%20%EC%88%8F%ED%8C%A8%EB%94%A9&etag1=021_A002_E023&etag2=0&etag3=0&etag4=%EC%88%8F%ED%8C%A8%EB%94%A9',
+                                                     'image': './img_set/short_padding.jpg' ,'data' : [4], 'name' : '숏 패딩'} ,
+                                           'light' : {'link' : 'http://www.lfmall.co.kr/p2/search/result?searchWord=%EC%97%AC%EC%84%B1%20%EA%B2%BD%EB%9F%89%ED%8C%A8%EB%94%A9&etag1=002_A002_E023&etag2=0&etag3=0&etag4=501',
+                                                      'image': './img_set/light_padding.jpg' ,'data' : [5], 'name' : '경량 패딩'}
                                          }
                                        }
 
-        var top_data_set = {'man_to_man': {'manA' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [7], 'name' : '맨A'},
-                                           'manB' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '맨B'},
-                                           'manC' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [3], 'name' : '맨C'}
+        var top_data_set = {'shirts': {'shirtsA' : {'link' : 'http://www.lfmall.co.kr/p2/search/result?searchWord=%EB%A0%88%EC%9D%B4%EC%8A%A4%20%EC%85%94%EC%B8%A0&etag1=021_A002_E023&etag2=0&etag3=0&etag4=%EC%97%AC%EC%84%B1%2C%EB%A1%B1%ED%8C%A8%EB%94%A9',
+                                                    'image': './img_set/lace_shirts.jpg' ,'data' : [7], 'name' : '레이스 셔츠'},
+                                           'shirtsB' : {'link' : 'http://www.lfmall.co.kr/p2/search/result?searchWord=%EB%B8%94%EB%9D%BC%EC%9A%B0%EC%8A%A4&etag1=021_A002_E023&etag2=0&etag3=0&etag4=%EB%A0%88%EC%9D%B4%EC%8A%A4%2C%EC%85%94%EC%B8%A0',
+                                                        'image': './img_set/blouse_shirts.jpg' ,'data' : [4], 'name' : '블라우스'},
+                                           'shirtsC' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=631614627&infw_disp_no_sct_cd=50&infw_disp_no=5416094&tracking=Search_Result&allViewYn=N#layerpopLargeView2',
+                                                        'image': './img_set/check_shirts.jpg' ,'data' : [3], 'name' : '체크 셔츠'}
                                         },
-                            'sweater': {'sweA' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [2], 'name' : '스A'} ,
-                                        'sweB' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '스B'} ,
-                                        'sweC' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [8], 'name' : '스C'}
+                            'sweater': {'sweA' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=450499189&infw_disp_no_sct_cd=50&infw_disp_no=5416014&tracking=Search_Result&allViewYn=N',
+                                                  'image': './img_set/neat_sweater.jpg' ,'data' : [2], 'name' : '니트'} ,
+                                        'sweB' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=606808537&infw_disp_no_sct_cd=50&infw_disp_no=5416243&tracking=Search_Result&allViewYn=N',
+                                                  'image': './img_set/cruneck_sweater.jpg' ,'data' : [4], 'name' : '크루넥'} ,
+                                        'sweC' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=448333482&infw_disp_no_sct_cd=50&infw_disp_no=5416048&tracking=Search_Result&allViewYn=N',
+                                                  'image': './img_set/turtleneck_sweater.jpg' ,'data' : [8], 'name' : '터틀넥'}
                                         },
-                            'cardigan': {'carA' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [9], 'name' : '가A'},
-                                         'carB': {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '가B'} ,
-                                         'carC' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [1], 'name' : '가C'}
+                            't_shirts': {'tA' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=490232780&infw_disp_no_sct_cd=16&infw_disp_no=5414566&tracking=Dc_prod_StyleReco_Clk_Prd_idx03&allViewYn=N',
+                                                    'image': './img_set/sleeveless_t.jpg' ,'data' : [9], 'name' : '민소매'},
+                                         'tB': {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=624776945&infw_disp_no_sct_cd=50&infw_disp_no=5415852&tracking=Search_Result&allViewYn=N',
+                                                'image': './img_set/half_t.jpg' ,'data' : [4], 'name' : '반팔티'} ,
+                                         'tC' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=615610258&infw_disp_no_sct_cd=50&infw_disp_no=5415852&tracking=Search_Result&allViewYn=N',
+                                                'image': './img_set/stripe_t.jpg' ,'data' : [6], 'name' : '스트라이프티'}
                                          }
                                        }
 
-        var bottom_data_set = {'jeans': {'jeansA' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [3], 'name' : '청A'},
-                                           'jeansB' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '청B'},
-                                           'jeansC' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [8], 'name' : '청C'}
+        var bottom_data_set = {'casual_pants': {'casA' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=487225650&infw_disp_no_sct_cd=50&infw_disp_no=5416379&tracking=Search_Result&allViewYn=N',
+                                                          'image': './img_set/slacks_casual.jpg' ,'data' : [3], 'name' : '슬랙스'},
+                                           'casB' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=510755447&infw_disp_no_sct_cd=50&infw_disp_no=5416338&tracking=Search_Result&allViewYn=N',
+                                                      'image': './img_set/linen_casual.jpg' ,'data' : [4], 'name' : '린넨팬츠'},
+                                           'casC' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=636694705&infw_disp_no_sct_cd=50&infw_disp_no=5416452&tracking=Search_Result&allViewYn=N',
+                                                      'image': './img_set/wide_casual.jpg' ,'data' : [8], 'name' : '와이드팬츠'}
                                         },
-                            'dress_slacks': {'dress_slacksA' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [4], 'name' : '슬랙스A'} ,
-                                             'dress_slacksB' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [9], 'name' : '슬랙스B'} ,
-                                             'dress_slacksC' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [3], 'name' : '슬랙스C'}
+                            'skirt': {'skirtA' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=635741859&infw_disp_no_sct_cd=50&infw_disp_no=5416437&tracking=Search_Result&allViewYn=N',
+                                                  'image': './img_set/long_skirt.jpg' ,'data' : [4], 'name' : '롱스커트'} ,
+                                             'skirtB' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=451913290&infw_disp_no_sct_cd=50&infw_disp_no=5416398&tracking=Search_Result&allViewYn=N',
+                                                          'image': './img_set/hline_skirt.jpg' ,'data' : [9], 'name' : 'H라인스커트'} ,
+                                             'skirtC' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=619479770&infw_disp_no_sct_cd=50&infw_disp_no=5416414&tracking=Search_Result&allViewYn=N',
+                                                          'image': './img_set/aline_skirt.jpg' ,'data' : [3], 'name' : 'A라인스커트'}
                                         },
-                            'cotton_trousers': {'cotton_trousersA' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [2], 'name' : '면바지A'},
-                                                'cotton_trousersB' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [6], 'name' : '면바지B'} ,
-                                                'cotton_trousersC' : {'link' : 'https://www.google.com', 'image': 'aw.png' ,'data' : [7], 'name' : '면바지C'}
+                            'jeans': {'jeansA' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=597291773&infw_disp_no_sct_cd=50&infw_disp_no=5416293&tracking=Search_Result&allViewYn=N#layerpopLargeView',
+                                                  'image': './img_set/skiny_jeans.jpg' ,'data' : [2], 'name' : '스키니진'},
+                                                'jeansB' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=597111375&infw_disp_no_sct_cd=50&infw_disp_no=5416293&tracking=Search_Result&allViewYn=N',
+                                                            'image': './img_set/il_jeans.jpg' ,'data' : [6], 'name' : '일자진'} ,
+                                                'jeansC' : {'link' : 'http://www.lotte.com/goods/viewGoodsDetail.lotte?goods_no=260442446&infw_disp_no_sct_cd=50&infw_disp_no=5416454&tracking=Search_Result&allViewYn=N',
+                                                            'image': './img_set/washing_jeans.jpg' ,'data' : [7], 'name' : '워싱진'}
                                          }
                                        }
 
@@ -411,7 +438,7 @@
     <script>
         /*초기 필요값*/
         var ctx = document.getElementById("PUI_Canvas");
-        var clothes = {outer: "coat", top: "man_to_man", bottom: "jeans"}
+        var clothes = {outer: "coat", top: "shirts", bottom: "casual_pants"}
 
         /*update 하는 파트 */
         /*함수*/
