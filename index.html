@@ -58,7 +58,7 @@
                 <li>
                 <fieldset data-role="controlgroup" data-type = 'horizontal' data-mini = 'true'>
                         <input name="top" id="shirts" type="radio" checked = "checked" value="choice-1">
-                        <label for="shirts">남방셔츠</label>
+                        <label for="shirts">셔츠</label>
                         <input name="top" id="sweater" type="radio" value="choice-2">
                         <label for="sweater">스웨터</label>
                         <input name="top" id="t_shirts" type="radio" value="choice-3">
@@ -96,7 +96,9 @@
         </div>
 
         <div id = "coordi">
-              coordi images here
+             <strong>그렇다면 이렇게 입어보세요!</strong>
+             <br>
+             <img id = 'coordi_img' src = "./coordi_set/coat_casual_pants.jpg" height = "200px">
         </div>
 
 
@@ -280,7 +282,7 @@
         var outer_ = {'coat': coat, 'jacket': jacket, 'padding': padding}
 
         /*상의*/
-        var shirts = { 'name': '남방셔츠', 'data': [3, 7, 5, 6], 'SI_data': 40,
+        var shirts = { 'name': '셔츠', 'data': [3, 7, 5, 6], 'SI_data': 40,
                             'color_back': 'rgba(54, 162, 235, 0.2)', 'color_border': 'rgba(54, 162, 235, 1)'};
         var sweater  = { 'name': '스웨터', 'data': [2, 5, 7, 9], 'SI_data': 38,
                             'color_back': 'rgba(54, 162, 235, 0.2)', 'color_border': 'rgba(54, 162, 235, 1)'};
@@ -748,6 +750,17 @@
             }
 
         }
+
+    </script>
+
+    <!-- 미구현이지만 구색을 위해 -->
+    <script>
+        var coordi_img_set = ['./coordi_set/coat_jeans.jpg','./coordi_set/coat_sweater.jpg']
+
+        $('li [name="select_done"]#select_done').bind('click', function(event){
+            coordi_img_set.push($("#coordi_img").attr('src'))
+            $("#coordi_img").attr('src',coordi_img_set.shift())
+        })
 
     </script>
 
